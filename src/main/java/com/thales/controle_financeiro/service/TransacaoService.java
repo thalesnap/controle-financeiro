@@ -19,8 +19,17 @@ public class TransacaoService {
     public List<Transacao> listarTodas() {
         return repository.findAll();
     }
-    
+
     public Transacao salvar(Transacao transacao) {
-    return repository.save(transacao);
-}
+        return repository.save(transacao);
+    }
+
+    public Transacao buscarPorId(Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    public Transacao atualizar(Long id, Transacao transacao) {
+        transacao.setId(id);
+        return repository.save(transacao);
+    }
 }

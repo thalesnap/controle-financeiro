@@ -58,4 +58,8 @@ public class Transacao {
     public void setData(LocalDate data) {
         this.data = data;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
