@@ -3,6 +3,7 @@ package com.thales.controle_financeiro.controller;
 import com.thales.controle_financeiro.entity.Transacao;
 import com.thales.controle_financeiro.service.TransacaoService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/transacoes")
 public class TransacaoController {
 

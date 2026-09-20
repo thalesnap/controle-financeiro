@@ -1,0 +1,49 @@
+<h1>Controle Financeiro</h1>
+<h2>Saldo: R$ {{ calcularSaldo() }}</h2>
+
+<h2>Nova transação</h2>
+
+<input #descricao placeholder="Descrição"
+       [value]="editandoId ? transacoes.find(t => t.id === editandoId)?.descricao : ''">
+
+<input #valor type="number" placeholder="Valor"
+       [value]="editandoId ? transacoes.find(t => t.id === editandoId)?.valor : ''">
+
+<select #tipo [value]="editandoId ? transacoes.find(t => t.id === editandoId)?.tipo : 'ENTRADA'">
+  <option value="ENTRADA">Entrada</option>
+  <option value="SAIDA">Saída</option>
+</select>
+
+<input #data type="date"
+       [value]="editandoId ? transacoes.find(t => t.id === editandoId)?.data : ''">
+
+<button (click)="editandoId ? atualizar(descricao.value, +valor.value, tipo.value, data.value) : adicionar(descricao.value, +valor.value, tipo.value, data.value)">
+  {{ editandoId ? 'Salvar alteração' : 'Adicionar' }}
+</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Valor</th>
+      <th>Tipo</th>
+      <th>Data</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (transacao of transacoes; track transacao.id) {
+    <tr>
+      <td>{{ transacao.descricao }}</td>
+      <td>R$ {{ transacao.valor }}</td>
+      <td>{{ transacao.tipo }}</td>
+      <td>{{ transacao.data }}</td>
+      <td>
+        <button (click)="editar(transacao)">Editar</button>
+        <button (click)="deletar(transacao.id)">Excluir</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
