@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin: 20px;
+}
+
+input, select, button {
+  padding: 8px;
+  margin: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.formulario {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.formulario input,
+.formulario select,
+.formulario button {
+  padding: 10px;
+  margin: 5px;
+}
+
+

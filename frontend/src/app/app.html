@@ -1,6 +1,7 @@
 <h1>Controle Financeiro</h1>
 <h2>Saldo: R$ {{ calcularSaldo() }}</h2>
 
+<div class="formulario">
 <h2>Nova transação</h2>
 
 <input #descricao placeholder="Descrição"
@@ -20,6 +21,7 @@
 <button (click)="editandoId ? atualizar(descricao.value, +valor.value, tipo.value, data.value) : adicionar(descricao.value, +valor.value, tipo.value, data.value)">
   {{ editandoId ? 'Salvar alteração' : 'Adicionar' }}
 </button>
+</div>
 
 <table>
   <thead>

@@ -3,7 +3,9 @@ import { TransacaoService } from './transacao.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.html'
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+  
 })
 export class App implements OnInit {
 
