@@ -19,4 +19,8 @@ public class TransacaoService {
     public List<Transacao> listarTodas() {
         return repository.findAll();
     }
+    
+    public Transacao salvar(Transacao transacao) {
+    return repository.save(transacao);
+}
 }

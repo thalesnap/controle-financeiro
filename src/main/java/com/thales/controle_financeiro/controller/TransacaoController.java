@@ -3,6 +3,8 @@ package com.thales.controle_financeiro.controller;
 import com.thales.controle_financeiro.entity.Transacao;
 import com.thales.controle_financeiro.service.TransacaoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +23,10 @@ public class TransacaoController {
     @GetMapping
     public List<Transacao> listarTodas() {
         return service.listarTodas();
+    }
+
+    @PostMapping
+    public Transacao salvar(@RequestBody Transacao transacao) {
+        return service.salvar(transacao);
     }
 }
