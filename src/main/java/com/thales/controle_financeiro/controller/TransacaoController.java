@@ -2,6 +2,8 @@ package com.thales.controle_financeiro.controller;
 
 import com.thales.controle_financeiro.entity.Transacao;
 import com.thales.controle_financeiro.service.TransacaoService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +42,11 @@ public class TransacaoController {
     @PutMapping("/{id}")
     public Transacao atualizar(@PathVariable Long id, @RequestBody Transacao transacao) {
         return service.atualizar(id, transacao);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        service.deletar(id);
     }
 
 }

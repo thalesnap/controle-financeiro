@@ -32,4 +32,8 @@ public class TransacaoService {
         transacao.setId(id);
         return repository.save(transacao);
     }
+
+    public void deletar(Long id) {
+        repository.deleteById(id);
+    }
 }
